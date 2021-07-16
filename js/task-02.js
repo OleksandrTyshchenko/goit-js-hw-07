@@ -14,14 +14,14 @@ const ingredients = [
   'Приправы',
 ];
 
-const ingredientsList = document.querySelector('#ingredients')
+const ingredientsListRef = document.querySelector('#ingredients')
 
-const element = ingredients.map(option => {
-  const ingredientsListElement = document.createElement('li')
-  ingredientsListElement.textContent = option
+
+const elementRef = ingredients.map(option => {
+  const ingredientsListElementRef = document.createElement('li')
+  ingredientsListElementRef.textContent = option
+
   
-  
-  
-  console.log(ingredientsListElement)
+  return ingredientsListElementRef
 })
- 
+ingredientsListRef.append(...elementRef)
