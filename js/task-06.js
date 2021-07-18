@@ -10,8 +10,10 @@ console.log(inputRef)
 inputRef.addEventListener('change', (event) => {
     if (Number(inputRef.getAttribute('data-length')) === event.currentTarget.value.length) {
         inputRef.classList.add("valid");
-    } else {
         inputRef.classList.remove("invalid");
+    } else {
+        inputRef.classList.add("invalid");
+        inputRef.classList.remove("valid");
     };
 })
     
