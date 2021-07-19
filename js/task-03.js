@@ -48,3 +48,25 @@ for (let i = 0; i < images.length; i += 1) {
 for (let el of images) 
   galleryRef.insertAdjacentHTML('beforeEnd', `<li><img src="${el.url}" width = 320 alt="${el.alt}" ></li>`); 
   
+
+
+
+
+
+
+
+// const makeGallery = ({url, alt}) => {
+//     return `<li>
+//     <img src = "${url}" alt = "${alt}">
+//     </li>`;
+// }
+
+
+// const imgEl = document.querySelector('#gallery');
+
+// const addGallery = images.map(makeGallery).join('');
+// imgEl.insertAdjacentHTML('afterend', addGallery);
+
+// var elems = document.getElementsByTagName('img'); // получает кол-цию елементов
+// for (var i = 0; i < elems.length; i++) elems[i].style.width = '640px';
+
