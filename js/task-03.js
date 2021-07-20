@@ -32,41 +32,25 @@ const galleryRef = document.querySelector('#gallery');
 const imagesRef = [];
 
 
-const ulSt = document.querySelector('gallery_list')
-
 for (let i = 0; i < images.length; i += 1) {
   const option = images[i];
-  const galleryListEl = document.createElement('li');
-  const galleryImagesRef = document.createElement('img');
-  galleryImagesRef.src = option.url;
-  galleryImagesRef.alt =  option.alt;
-  galleryImagesRef.width = 320;
-  
 };
- galleryRef.setAttribute("style", "list-style:none; display: flex; justify-content: space-around;") 
-   
-for (let el of images) 
-  galleryRef.insertAdjacentHTML('beforeEnd', `<li><img src="${el.url}" width = 320 alt="${el.alt}" ></li>`); 
-  
+ 
+galleryRef.setAttribute("style", "list-style:none; display: flex; justify-content: space-around;")
+ 
+const makeGallery = ({url, alt}) => {
+  return `<li>
+  <img src = "${url}" alt = "${alt}">
+  </li>`;
+}
+
+
+const fff = images.map(makeGallery).join('');
+galleryRef.insertAdjacentHTML('afterbegin', fff);
+var elems = document.getElementsByTagName('img');
+for (var i = 0; i < elems.length; i++) elems[i].style.width = '320px'
 
 
 
 
-
-
-
-// const makeGallery = ({url, alt}) => {
-//     return `<li>
-//     <img src = "${url}" alt = "${alt}">
-//     </li>`;
-// }
-
-
-// const imgEl = document.querySelector('#gallery');
-
-// const addGallery = images.map(makeGallery).join('');
-// imgEl.insertAdjacentHTML('afterend', addGallery);
-
-// var elems = document.getElementsByTagName('img'); // получает кол-цию елементов
-// for (var i = 0; i < elems.length; i++) elems[i].style.width = '640px';
 
